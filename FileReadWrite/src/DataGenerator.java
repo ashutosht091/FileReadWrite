@@ -14,7 +14,7 @@ public class DataGenerator {
 	static ByteArrayOutputStream out;
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub   
 		generateDirectoryContent("destination", 15, 25);
 
 	}
