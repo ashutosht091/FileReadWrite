@@ -35,9 +35,9 @@ public class DataBackUpEngine {
 			List<Path> sourceFiles = getAllFiles(source);
 			for(Path sFile:sourceFiles){
 				File desinationFile = new File(sFile.toString().replace(source, destinationPath));
-				desinationFile.mkdirs();
+				desinationFile.getParentFile().mkdirs();
 				Files.copy(sFile, desinationFile.toPath(),
-						StandardCopyOption.ATOMIC_MOVE);
+						StandardCopyOption.COPY_ATTRIBUTES);
 			}
 		} catch (IOException e) {
 			System.out.println("some thing went wrong"+e.getMessage());

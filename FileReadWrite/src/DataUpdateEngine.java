@@ -44,7 +44,7 @@ public class DataUpdateEngine {
 				}
 			}
 		}
-
+		System.out.println("Job Completed");
 
 
 	}

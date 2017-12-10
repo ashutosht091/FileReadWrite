@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class DataGenerator {
 
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)  {
 		Scanner sc = new Scanner(System.in);
 		int fileSize=0;
 		int choice = 4;
@@ -37,6 +37,7 @@ public class DataGenerator {
 			++count;
 		}
 		sc.close();
+
 
 
 
@@ -59,24 +60,25 @@ public class DataGenerator {
 		String fileName =  File.separator+"file";
 		int count=1;
 		try{
-		do{
+			do{
 
-			File file = new File(directory);
-			if(!file.exists()) 
-			{
-				file.mkdirs();
-			}
-			file = new File(file,fileName+count);
-			if(count==fileCount &&leftoverSize>0)
-			{
+				File file = new File(directory);
+				if(!file.exists()) 
+				{
+					file.mkdirs();
+				}
+				file = new File(file,fileName+count);
+				if(count==fileCount &&leftoverSize>0)
+				{
 
-				FileUtil.write(leftoverSize,file);
-				leftoverSize=0;
-			}else{	
-				FileUtil.write(fileSize,file);
-			}
-			count++;
-		}while(count<=fileCount);
+					FileUtil.write(leftoverSize,file);
+					leftoverSize=0;
+				}else{	
+					FileUtil.write(fileSize,file);
+				}
+				count++;
+			}while(count<=fileCount);
+			System.out.println("Data Generated Successfully");
 		}catch(Exception ex)
 		{
 			System.out.println("some error occurred"+ex.getMessage());
